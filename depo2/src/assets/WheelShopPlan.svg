@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  WheelShopPlan.svg
+  Векторная калька плана Колесного цеха по JPG:
+  https://pub-cdn.sider.ai/u/U005HE2ZZKA/web-coder/698db9dbacf1d7aa3a59c612/resource/7b604018-5588-46f4-a4b4-5dfade9de718.jpg
+
+  Цель: максимально похожий на оригинал техчертёж: комнаты, подписи, размеры.
+  Красная трасса УДАЛЕНА, только архитектурный план.
+-->
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 620 340"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">Колесный цех — план</title>
+  <desc id="desc">
+    План Колесного цеха с основными помещениями, коридором и размерными линиями 56000×27000.
+  </desc>
+
+  <defs>
+    <!-- Маркер стрелок для размерных линий -->
+    <marker
+      id="dimArrow"
+      viewBox="0 0 10 10"
+      refX="5"
+      refY="5"
+      markerWidth="6"
+      markerHeight="6"
+      orient="auto"
+    >
+      <path d="M 0 5 L 10 0 L 10 10 z" fill="#111827" />
+    </marker>
+
+    <style>
+      .outline {
+        fill: none;
+        stroke: #111827; /* gray-900 */
+        stroke-width: 2;
+      }
+
+      .inner {
+        fill: none;
+        stroke: #111827;
+        stroke-width: 1.6;
+      }
+
+      .dim-line {
+        stroke: #111827;
+        stroke-width: 1;
+      }
+
+      .dim-arrow {
+        stroke: #111827;
+        stroke-width: 1;
+        marker-start: url(#dimArrow);
+        marker-end: url(#dimArrow);
+      }
+
+      .label-main {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        font-size: 14px;
+        fill: #111827;
+        font-weight: 600;
+      }
+
+      .label {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        font-size: 11px;
+        fill: #111827;
+      }
+
+      .label-small {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        font-size: 9px;
+        fill: #111827;
+      }
+    </style>
+  </defs>
+
+  <!-- Фон -->
+  <rect x="0" y="0" width="620" height="340" fill="#ffffff" />
+
+  <!-- Внешний контур здания (56000×27000 с отступами) -->
+  <!-- Соответствие: 1 SVG-единица ≈ 100 мм, контур 560×270 -->
+  <rect class="outline" x="30" y="30" width="560" height="270" />
+
+  <!-- Горизонтальная перегородка под верхними комнатами -->
+  <line class="inner" x1="30" y1="90" x2="590" y2="90" />
+
+  <!-- Вертикальные границы центрального блока (Колесный цех + Роликовое отделение) -->
+  <!-- Левая внутренняя стена -->
+  <line class="inner" x1="190" y1="90" x2="190" y2="300" />
+  <!-- Правая внутренняя стена -->
+  <line class="inner" x1="450" y1="90" x2="450" y2="300" />
+
+  <!-- Горизонтальная стена между Колесным цехом и Роликовым отделением -->
+  <line class="inner" x1="190" y1="210" x2="450" y2="210" />
+
+  <!-- Левый средний блок Кросс с МК -->
+  <line class="inner" x1="30" y1="150" x2="190" y2="150" />
+  <line class="inner" x1="110" y1="90" x2="110" y2="210" />
+
+  <!-- Правый нижний блок (коридор / Вход ОК) -->
+  <line class="inner" x1="450" y1="180" x2="590" y2="180" />
+
+  <!-- Внутренний кабинет мастера в центральной зоне справа (как на JPG, в зоне Колесного цеха) -->
+  <rect class="inner" x="330" y="110" width="100" height="60" />
+
+  <!-- ВЕРХНИЕ КОМНАТЫ -->
+
+  <!-- Уч. класс 2эт (левый верхний прямоугольник) -->
+  <rect class="inner" x="30" y="30" width="160" height="60" />
+  <text class="label" x="110" y="55" text-anchor="middle">
+    Уч. класс 2эт
+  </text>
+  <text class="label-small" x="110" y="72" text-anchor="middle">
+    Π
+  </text>
+
+  <!-- Терминал / Π (правый верхний прямоугольник) -->
+  <rect class="inner" x="310" y="30" width="280" height="60" />
+  <text class="label" x="450" y="52" text-anchor="middle">
+    Терминал
+  </text>
+  <text class="label-small" x="450" y="70" text-anchor="middle">
+    Π
+  </text>
+
+  <!-- СРЕДНИЕ КОМНАТЫ -->
+
+  <!-- Кросс с МК (левый средний блок) -->
+  <rect class="inner" x="30" y="90" width="160" height="120" />
+  <text class="label" x="110" y="120" text-anchor="middle">
+    Кросс с МК
+  </text>
+  <text class="label-small" x="110" y="138" text-anchor="middle">
+    на 2а RG
+  </text>
+  <text class="label-small" x="110" y="156" text-anchor="middle">
+    UTP в гофре
+  </text>
+
+  <!-- Колесный цех (центральный основной зал) -->
+  <rect class="inner" x="190" y="90" width="260" height="120" />
+  <text class="label-main" x="320" y="160" text-anchor="middle">
+    Колесный цех
+  </text>
+
+  <!-- Кабинет мастера колесного цеха 23т. (правый от Колесного цеха, в средней зоне) -->
+  <rect class="inner" x="450" y="90" width="140" height="90" />
+  <text class="label-small" x="520" y="120" text-anchor="middle">
+    Кабинет мастера
+  </text>
+  <text class="label-small" x="520" y="137" text-anchor="middle">
+    колесного цеха 23т.
+  </text>
+
+  <!-- НИЖНИЕ КОМНАТЫ -->
+
+  <!-- Роликовое отделение (под Колесным цехом) -->
+  <rect class="inner" x="190" y="210" width="260" height="90" />
+  <text class="label" x="320" y="255" text-anchor="middle">
+    Роликовое отделение.
+  </text>
+
+  <!-- Правый нижний блок с входом ОК и коридором -->
+  <rect class="inner" x="450" y="180" width="140" height="120" />
+  <text class="label" x="520" y="210" text-anchor="middle">
+    Вход ОК
+  </text>
+  <text class="label-small" x="520" y="228" text-anchor="middle">
+    из коридора
+  </text>
+
+  <!-- Мелкие подписи внутри Колесного цеха -->
+  <text class="label-small" x="230" y="120">
+    Кабинет мастера
+  </text>
+  <text class="label-small" x="230" y="137">
+    терминал / Π
+  </text>
+  <text class="label-small" x="210" y="190">
+    21
+  </text>
+
+  <!-- Размерные линии по периметру: 56000 (горизонталь), 27000 (вертикаль) -->
+
+  <!-- Горизонтальный размер -->
+  <line class="dim-line" x1="30" y1="20" x2="590" y2="20" />
+  <line class="dim-line" x1="30" y1="20" x2="30" y2="30" />
+  <line class="dim-line" x1="590" y1="20" x2="590" y2="30" />
+  <line class="dim-arrow" x1="40" y1="20" x2="580" y2="20" />
+  <text class="label-small" x="310" y="12" text-anchor="middle">
+    56000
+  </text>
+
+  <!-- Вертикальный размер -->
+  <line class="dim-line" x1="20" y1="30" x2="20" y2="300" />
+  <line class="dim-line" x1="20" y1="30" x2="30" y2="30" />
+  <line class="dim-line" x1="20" y1="300" x2="30" y2="300" />
+  <line class="dim-arrow" x1="20" y1="40" x2="20" y2="290" />
+  <text
+    class="label-small"
+    x="12"
+    y="165"
+    text-anchor="middle"
+    transform="rotate(-90 12 165)"
+  >
+    27000
+  </text>
+
+  <!-- Номер "2" у правой части (как на исходном JPG) -->
+  <text class="label-small" x="575" y="105" text-anchor="end">
+    2
+  </text>
+</svg>
