@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express'
-import jwt from 'jsonwebtoken'
+import * as jwt from 'jsonwebtoken'
 
 export interface AuthRequest extends Request {
   userId?: string
@@ -13,7 +13,8 @@ export function authMiddleware(req: AuthRequest, res: Response, next: NextFuncti
   }
 
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'your-secret-key')
+    const secret = process.env.JWT_SECRET || 'your-secret-key'
+    const decoded = jwt.verify(token, secret)
     req.userId = (decoded as any).userId
     next()
   } catch (error) {
@@ -22,9 +23,11 @@ export function authMiddleware(req: AuthRequest, res: Response, next: NextFuncti
 }
 
 export function generateToken(userId: string): string {
+  const secret = process.env.JWT_SECRET || 'your-secret-key'
+  const expiresIn = process.env.JWT_EXPIRES_IN || '7d'
   return jwt.sign(
     { userId },
-    process.env.JWT_SECRET || 'your-secret-key',
-    { expiresIn: process.env.JWT_EXPIRES_IN || '7d' }
+    secret,
+    { expiresIn } as any
   )
 }
